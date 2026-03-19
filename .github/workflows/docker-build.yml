@@ -14,9 +14,9 @@ jobs:
       - name: Log in to Aliyun Registry
         uses: docker/login-action@v3
         with:
-          registry: ${{ secrets.ALiyun_REGISTRY }}
-          username: ${{ secrets.ALiyun_USERNAME }}
-          password: ${{ secrets.ALiyun_PASSWORD }}
+          registry: ${{ secrets.ALIYUN_REGISTRY }}
+          username: ${{ secrets.ALIYUN_REGISTRY_USER }}
+          password: ${{ secrets.ALIYUN_PASSWORD }}
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
@@ -24,4 +24,4 @@ jobs:
           context: .
           push: true
           # 这里换成你自己的镜像全路径
-          tags: ${{ secrets.ALiyun_REGISTRY }}/jiangnan5210/musicn:latest
+          tags: ${{ secrets.ALIYUN_REGISTRY }}/jiangnan5210/musicn:latest
